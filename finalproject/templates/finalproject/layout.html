@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        {% if title %}
+            <title>Betting - {{title}}</title>
+        {% else %}
+            <title>Betting</title>
+        {% endif %}
+        
+    </head>
+    <body>
+        <div> 
+            <p><a href="{% url 'home' %}"> Home </a></p>
+            <p><a href="{% url 'about' %}"> About </a></p>
+            {% if user.is_authenticated %}
+                <p><a href="{% url 'profile' %}">Profile</a></p>
+                <p><a href="{% url 'logout' %}">Log out</a></p>
+            {% else %}
+               <p><a href="{% url 'register' %}">Register</a></p>
+               <p><a href="{% url 'login' %}">Log in</a></p>           
+            {% endif %}
+                {% if messages %}
+                {% for message  in messages %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+    </body>
+</html>
