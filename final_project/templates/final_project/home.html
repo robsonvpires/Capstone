@@ -1,0 +1,17 @@
+{% extends 'final_project/layout.html' %}
+    {% block title %}
+        Home
+    {% endblock %}
+
+    {% block content %}
+        <h1>Home</h1>
+        <h3>Matches</h3>
+        
+            {% for match in matches %}
+            <div>
+                <h4>{{match.local}} x {{match.visitor}}</h4>
+                <small>{{match.place}}, on {{match.date}}</small>
+            </div>
+            {% endfor %}
+    
+    {% endblock %}
