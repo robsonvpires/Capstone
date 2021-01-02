@@ -1,3 +1,4 @@
 from django.contrib import admin
+from final_project.models import *
 
-# Register your models here.
+admin.site.register(Match)
