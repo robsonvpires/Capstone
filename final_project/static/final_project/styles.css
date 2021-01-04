@@ -2,3 +2,9 @@ body{
   background: red;
   color: blue;
 }
+.special-img {
+  height: auto; 
+  width: auto; 
+  max-width: 30px; 
+  max-height: 30px; 
+}
