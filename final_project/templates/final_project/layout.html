@@ -27,7 +27,7 @@
             {%if user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link" href='{% url "profile" %}'>
-                  <img src='{{user.profile.image.url}}' class="img-circle special-img">
+                  <img src='{{user.profile.image.url}}' class="rounded-circle navbar-img">
                   {{user.username}}
                 </a>
               </li>

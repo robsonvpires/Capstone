@@ -6,8 +6,9 @@
 {% endblock %}
 
     {% block content %}
-        <h1>{{user.username}}</h1>
-        <img src='{{ user.profile.image.url }}'>
+        <div class='container'>
+        <img class='img-thumbnail profile-pic' src='{{ user.profile.image.url }}'>
+        <h2>{{user.username}}</h2>
         <p>{{user.email}}</p>
 
         <form method='POST' enctype="multipart/form-data">
@@ -21,4 +22,5 @@
                 <button class='btn' type='submit'>Update</button>
             </div>
         </form>
+    </div>
     {% endblock %}
