@@ -7,6 +7,16 @@
 
     {% block content %}
         <div class='container'>
-       
+            <form method='POST' enctype="multipart/form-data">
+                {% csrf_token %}
+                <fieldset class='form-group'>
+                    <legend class='border-bottom md-4'>Edit Profile info</legend>
+                    {{ u_form|crispy }}
+                    {{ p_form|crispy }}
+                </fieldset>
+                <div class='form-group'>
+                    <button class='btn' type='submit'>Update</button>
+                </div>
+            </form>
         </div>
     {% endblock %}
