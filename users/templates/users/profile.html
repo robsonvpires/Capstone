@@ -9,6 +9,7 @@
         <div class='container'>
             <img class='img-thumbnail profile-pic' src='{{ user.profile.image.url }}'>
             <h2>{{user.username}}</h2>
+            <small>{{user.profile.location}}</small>
             <p>{{user.email}}</p>
             <p>{{user.profile.coins}}</p>
             <a href='{% url "edit-profile" %}'>Edit profile</a>

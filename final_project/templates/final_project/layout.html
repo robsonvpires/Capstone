@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>{% block title %} {% endblock %}</title>
+      <title> {% block title %} {% endblock %}</title>
+      <link rel = "icon" href = "https://free-icon-rainbow.com/i/icon_03990/icon_039900_256.png" type = "image/x-icon"> 
       <link rel="stylesheet" href="{% static 'final_project/styles.css' %}">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -31,7 +32,7 @@
             {%if user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link" href='{% url "profile" %}'>
-                  <img src='{{user.profile.image.url}}' class="rounded-circle navbar-img">
+                  <img src='{{user.profile.image.url}}' class="navbar-img">
                   {{user.username}}
                 </a>
               </li>
