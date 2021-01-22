@@ -16,3 +16,16 @@ body{
   max-width: 200px; 
   max-height: 200px; 
 }
+.team-icon {
+  position: relative;
+  top: -5px;
+  float: left;
+  height: auto; 
+  width: auto; 
+  max-width: 30px; 
+  max-height: 30px;
+  margin: 5px;
+}
+.match-container{
+  padding: 20px;
+}

@@ -5,19 +5,33 @@
 
     {% block content %}
         <h1>Home</h1>
-        <h3>Today Matches</h3>
-            {% if matches_today %}
-                {{matches_today}}
-            {% else %}
-                <p>No matches today</p>
-            {% endif %}
-        <h3>All Matches</h3>
         
-            {% for match in matches %}
-            <div>
-                <h5>{{match.local_img}} {{match.local}} x {{match.visitor}}{{match.visitor_img}}</h5>
-                <small>{{match.place}}, on {{match.date}}</small>
+        <h3>A Matches today</h3>
+        {% if a_matches %}
+            {% for match in a_matches %}
+            <div class="match-container">
+                <div class='row'>
+                    <img class="team-icon" src="{{match.local_img}}"><h5>{{match.local}} x {{match.visitor}} </h5><img class="team-icon" src="{{match.visitor_img}}">
+                </div>
+                <div class='row'><small>{{match.place}}, on {{match.date}}</small></div>
             </div>
             {% endfor %}
+        {% else %}
+            <p>No matches today</p>
+        {% endif %}
+        
+        <h3>B Matches Today</h3>
+        {% if b_matches %}
+            {% for match in b_matches %}
+            <div class="match-container">
+                <div class='row'>
+                    <img class="team-icon" src="{{match.local_img}}"><h5>{{match.local}} x {{match.visitor}} </h5><img class="team-icon" src="{{match.visitor_img}}">
+                </div>
+                <div class='row'><small>{{match.place}}, on {{match.date}}</small></div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No matches today</p>
+        {% endif %}
     
     {% endblock %}
