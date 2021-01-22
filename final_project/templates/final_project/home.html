@@ -5,11 +5,17 @@
 
     {% block content %}
         <h1>Home</h1>
-        <h3>Matches</h3>
+        <h3>Today Matches</h3>
+            {% if matches_today %}
+                {{matches_today}}
+            {% else %}
+                <p>No matches today</p>
+            {% endif %}
+        <h3>All Matches</h3>
         
             {% for match in matches %}
             <div>
-                <h4>{{match.local}} x {{match.visitor}}</h4>
+                <h5>{{match.local_img}} {{match.local}} x {{match.visitor}}{{match.visitor_img}}</h5>
                 <small>{{match.place}}, on {{match.date}}</small>
             </div>
             {% endfor %}
